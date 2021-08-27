@@ -1,4 +1,4 @@
-#grid
+#grid #units
 
 The `fr` unit (a “fraction”) can be used when defining grids like any other [CSS length](https://css-tricks.com/the-lengths-of-css/) such as `%`, `px` or `em`. Let’s quickly refactor the code above to use this peculiar new value:
 

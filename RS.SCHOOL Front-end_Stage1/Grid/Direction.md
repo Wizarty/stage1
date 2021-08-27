@@ -1,4 +1,4 @@
-#grid
+#grid 
 
 ## grid-auto-flow
 If you have grid items that you don’t explicitly place on the grid, the _auto-placement algorithm_ kicks in to automatically place the items. This property controls how the auto-placement algorithm works.

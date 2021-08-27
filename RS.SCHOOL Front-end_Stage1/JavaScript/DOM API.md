@@ -1,5 +1,5 @@
-#js
-
+#js #dom
+ 
 The DOM is not part of the JavaScript language, but is instead a Web API used to build websites. JavaScript can also be used in other contexts. For example, Node.js runs JavaScript programs on a computer, but provides a different set of APIs, and the DOM API is not a core part of the Node.js runtime.
 
 # The HTML DOM API

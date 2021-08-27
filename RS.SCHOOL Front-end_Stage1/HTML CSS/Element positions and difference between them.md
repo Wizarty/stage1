@@ -1,6 +1,6 @@
 #html/css
 
-- position: static;
+  - position: static;
   - position: relative;
   - position: absolute;
   - position: fixed;

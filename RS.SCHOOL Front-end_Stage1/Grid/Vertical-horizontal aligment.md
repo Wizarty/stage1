@@ -1,4 +1,10 @@
-#grid
+#grid #align
+
+#### justify-content: center;  - center items vertically, in this case 
+
+#### align-items: center;     - center items horizontally, in this case 
+
+----------
 
 ### Short grid
 

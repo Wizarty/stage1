@@ -1,4 +1,4 @@
-#js
+#js #methods
 
 ## String Methods
 

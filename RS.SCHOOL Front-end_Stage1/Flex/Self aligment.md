@@ -1,4 +1,4 @@
-#flex
+#flex #align
 
 #### align-self
 for items
