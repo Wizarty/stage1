@@ -1,8 +1,9 @@
 #grid #align
 
-#### justify-content: center;  - center items vertically, in this case 
+| horizontally(main axis)|vertically(cross-axis) | mix(main and cross axis) |
+|----- |----- |----- |
+|justify-content | align-items   | place-items|
 
-#### align-items: center;     - center items horizontally, in this case 
 
 ----------
 

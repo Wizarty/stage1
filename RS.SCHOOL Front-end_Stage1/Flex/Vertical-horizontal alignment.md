@@ -1,8 +1,10 @@
 #flex #align
 
-#### justify-content: center;  - center items vertically, in this case 
+| horizontally(main axis)|vertically(cross-axis) |
+|----- |----- |
+|justify-content | align-items   |
+|  |align-content |
 
-#### align-items: center;     - center items horizontally, in this case 
 
 ------------
 
