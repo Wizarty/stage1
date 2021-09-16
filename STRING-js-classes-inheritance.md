@@ -1,9 +1,7 @@
 class StringBuilder {
   
   constructor(n) {
-   
     this.value=n;
-    
     }
   
   plus(...args) {
