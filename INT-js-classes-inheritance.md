@@ -3,7 +3,14 @@ class IntBuilder {
   constructor(n) {
     this.value=n;
     }
-  
+    
+  static random(from,to){
+  const min = Math.ceil(from);
+  const max = Math.floor(to);
+  return Math.floor(Math.random() * (to - from + 1)) + from;
+    
+}
+
   plus(...args) {
     this.value += args.reduce((plus, current) => plus + current);
     return this;
