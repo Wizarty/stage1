@@ -1,9 +1,7 @@
 class IntBuilder {
   
   constructor(n) {
-   
     this.value=n;
-    
     }
   
   plus(...args) {
