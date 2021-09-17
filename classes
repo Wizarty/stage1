@@ -24,7 +24,10 @@ class Builder{
      //this.value = Math.floor(this.value / n)
      return this;
   }
-    
+     get() {
+    return this.value;
+  }
+
     
 }
 ////////////////////////////////////////////////////////////////////////////////
@@ -47,10 +50,7 @@ class IntBuilder extends Builder {
      this.value = (this.value % n)
      return this;
   }
-   get() {
-    return this.value;
-  }
-
+  
 }
 
 
