@@ -85,7 +85,7 @@ function StringBuilder(str) {
      return this;
   }
   StringBuilder.prototype.remove = function(str){
-    this.value = this.value.split('').filter(item => item !== str).join('')
+    this.value = this.value.split(str).filter(item => item !== str).join('')
     return this;
   }
   StringBuilder.prototype.sub = function(from,n){
