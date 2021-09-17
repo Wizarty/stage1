@@ -89,7 +89,7 @@ function StringBuilder(str) {
     return this;
   }
   StringBuilder.prototype.sub = function(from,n){
-     this.value = this.value.splice(from-1,n)
+     this.value = this.value.split('').splice(from-1,n).join('')
      return this;
   }
  
