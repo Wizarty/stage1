@@ -1,3 +1,5 @@
+
+
 class Builder{
     
     constructor(build){
@@ -10,19 +12,6 @@ class Builder{
     return this;
 }
 
-    minus(...n) {
-    this.value = this.value - n.reduce((minus, current) => minus + current );
-    return this;
-  }
-  
-    multiply(n){
-    this.value = this.value * n
-    return this;
-  }
-    divide(n){
-     this.value = (this.value / n)
-     return this;
-  }
     get() {
     return this.value;
   }
@@ -49,7 +38,19 @@ class IntBuilder extends Builder {
       return 'input only Numbers and in random(from,to) from < to '
         }
 }
- 
+     minus(...n) {
+    this.value = this.value - n.reduce((minus, current) => minus + current );
+    return this;
+  }
+  
+    multiply(n){
+    this.value = this.value * n
+    return this;
+  }
+    divide(n){
+     this.value = (this.value / n)
+     return this;
+  }
    mod(n){
      this.value = (this.value % n)
      return this;
@@ -61,7 +62,7 @@ class IntBuilder extends Builder {
 
 a = new IntBuilder(10)
 
-console.log(a.plus(2,3,2).minus(1, 2).multiply(2).divide(4).mod(3).get())
+console.log(a.plus(2,3,2).minus(1, 2).multiply(2).divide(4).get())
 console.log(IntBuilder.random(10,100))
 
 /////////////////////////////////////////////////////////////////////////////////
@@ -74,7 +75,8 @@ function StringBuilder(str='') {
 
 }
   StringBuilder.prototype = Object.create(Builder.prototype);
-
+  StringBuilder.prototype.constructor = StringBuilder;
+  
   StringBuilder.prototype.minus = function(n) {
     this.value = this.value.substring(0, this.value.length - n);
     return this;
@@ -102,3 +104,6 @@ function StringBuilder(str='') {
 a = new StringBuilder('Hello')
 
 console.log(a.plus(' all', '!').minus(4).multiply(3).divide(4).remove('l').sub(1,1).get())       
+      
+
+
