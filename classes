@@ -62,15 +62,14 @@ console.log(IntBuilder.random(10,100))
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
 
+
 function StringBuilder(str) {
+  Object.assign(this, new Builder(str)) 
   this.value=str;
 
 }
+  StringBuilder.prototype = Object.create(Builder.prototype);
 
- StringBuilder.prototype.plus = function(...str) {
-    this.value += str.reduce((plus, current) => plus + current);
-    return this;
-}
   StringBuilder.prototype.minus = function(n) {
     this.value = this.value.substring(0, this.value.length - n);
     return this;
@@ -93,16 +92,11 @@ function StringBuilder(str) {
      return this;
   }
  
-   StringBuilder.prototype.get = function() {
-    return this.value;
-  }
 
 
 a = new StringBuilder('Hello')
 
 console.log(a.plus(' all', '!').get())
-
-
 
 
 
