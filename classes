@@ -1,4 +1,3 @@
-
 class Builder{
     
     constructor(build){
@@ -22,7 +21,6 @@ class Builder{
   }
   divide(n){
      this.value = (this.value / n)
-     //this.value = Math.floor(this.value / n)
      return this;
   }
      get() {
@@ -55,18 +53,19 @@ class IntBuilder extends Builder {
   
 }
 
+///////////// Run
 
 a = new IntBuilder(10)
 
-console.log(a.plus(2,3,2).minus(1,2).get())
+console.log(a.plus(2,3,2).minus(1, 2).multiply(2).divide(4).mod(3).get())
 console.log(IntBuilder.random(10,100))
 
-/////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
 
 
 
-function StringBuilder(str) {
-  Object.assign(this, new Builder(str='')) 
+function StringBuilder(str='') {
+  Object.assign(this, new Builder(str)) 
   this.value=str;
 
 }
@@ -90,25 +89,15 @@ function StringBuilder(str) {
     return this;
   }
   StringBuilder.prototype.sub = function(from,n){
-     this.value = this.value.split('').splice(from-1,n).join('')
+     this.value = this.value.split('').splice(from,n).join('')
      return this;
   }
  
+///////////// Run
 
+a = new StringBuilder('Hello')
 
-a = new StringBuilder()
-
-console.log(a.plus(' all', '!').get())
-
-
-
-
-
-
-
-
-
-
+console.log(a.plus(' all', '!').minus(4).multiply(3).divide(4).remove('l').sub(1,1).get())       
 
 
 
