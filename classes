@@ -10,20 +10,20 @@ class Builder{
     return this;
 }
 
-   minus(...n) {
+    minus(...n) {
     this.value = this.value - n.reduce((minus, current) => minus + current );
     return this;
   }
   
-  multiply(n){
+    multiply(n){
     this.value = this.value * n
     return this;
   }
-  divide(n){
+    divide(n){
      this.value = (this.value / n)
      return this;
   }
-     get() {
+    get() {
     return this.value;
   }
 
@@ -39,11 +39,15 @@ class IntBuilder extends Builder {
     
     }
     
-  static random(from,to){
+ static random(from,to){
   const min = Math.ceil(from);
   const max = Math.floor(to);
-  return Math.floor(Math.random() * (to - from + 1)) + from;
-    
+  if(Number.isFinite(from) && Number.isFinite(to) && from < to){
+  return Math.floor(Math.random() * (to - from)) + from; 
+  // if u want include 'to' just write +1 , (to - from + 1)) + from
+  } else {
+      return 'input only Numbers and in random(from,to) from < to '
+        }
 }
  
    mod(n){
@@ -98,129 +102,3 @@ function StringBuilder(str='') {
 a = new StringBuilder('Hello')
 
 console.log(a.plus(' all', '!').minus(4).multiply(3).divide(4).remove('l').sub(1,1).get())       
-
-
-
-
-
-
-
-
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
-
-
-
-
-
-class Builder{
-    
-    constructor(build){
-        this.value=build
-    }
-    
-    
-    
-}
-
-class IntBuilder {
-  
-  constructor(n) {
-    this.value=n;
-    }
-    
-  static random(from,to){
-  const min = Math.ceil(from);
-  const max = Math.floor(to);
-  return Math.floor(Math.random() * (to - from + 1)) + from;
-    
-}
-
-  plus(...n) {
-    this.value += n.reduce((plus, current) => plus + current);
-    return this;
-}
-
-  minus(...n) {
-    this.value = this.value - n.reduce((minus, current) => minus + current );
-    return this;
-  }
-  
-  multiply(n){
-    this.value = this.value * n
-    return this;
-  }
-  divide(n){
-     this.value = (this.value / n)
-     //this.value = Math.floor(this.value / n)
-     return this;
-  }
-   mod(n){
-     this.value = (this.value % n)
-     return this;
-  }
-   get() {
-    return this.value;
-  }
-
-}
-
-
-a = new IntBuilder(10)
-
-console.log(a.plus(2,3,2).minus(1,2).multiply(2).divide(4).mod(3).get())
-console.log(IntBuilder.random(10,100))
-
-
-function StringBuilder(str) {
-  this.value=str;
-}
-
-StringBuilder.prototype.plus = function(...str) {
-    this.value += str.reduce((plus, current) => plus + current);
-    return this;
-}
-
-  StringBuilder.prototype.minus = function(n) {
-    this.value = this.value.substring(0, this.value.length - n);
-    return this;
-  }
-  
-  StringBuilder.prototype.multiply = function(n){
-     this.value = this.value.repeat(n)
-     return this;
-  }
-  StringBuilder.prototype.divide = function(n){
-     this.value = this.value.substring(0,Math.floor(this.value.length / n))
-     return this;
-  }
-  StringBuilder.prototype.remove = function(str){
-    this.value = this.value.replace(str,'')
-    return this;
-  }
-  StringBuilder.prototype.sub = function(from,n){
-     this.value = this.value.splice(from-1,n)
-     return this;
-  }
- 
-   StringBuilder.prototype.get = function() {
-    return this.value;
-  }
-
-
-a = new StringBuilder('Hello')
-
-console.log(a.plus(' all', '!').minus(4).multiply(3).divide(4).remove('l').get())
-
-
-
-
-
-
