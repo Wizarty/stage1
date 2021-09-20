@@ -2,6 +2,7 @@
 class Builder{
     
     constructor(build){
+
         this.value=build
     }
     
@@ -30,11 +31,12 @@ class Builder{
 
     
 }
+
 ////////////////////////////////////////////////////////////////////////////////
 class IntBuilder extends Builder {
   
-  constructor(n) {
-    super(n)
+  constructor(n=0) {
+    super()
     this.value=n;
     
     }
@@ -64,7 +66,7 @@ console.log(IntBuilder.random(10,100))
 
 
 function StringBuilder(str) {
-  Object.assign(this, new Builder(str)) 
+  Object.assign(this, new Builder(str='')) 
   this.value=str;
 
 }
@@ -94,11 +96,9 @@ function StringBuilder(str) {
  
 
 
-a = new StringBuilder('Hello')
+a = new StringBuilder()
 
 console.log(a.plus(' all', '!').get())
-
-
 
 
 
